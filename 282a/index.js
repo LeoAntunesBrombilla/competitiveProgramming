@@ -22,19 +22,19 @@ function readline() {
   return inputString[currentLine++];
 }
 
-//TODO rescrever usando filter se pa
-
 function main() {
-  const [numberOfParticipants, minimunScore] = readline().split(" ");
-  const scores = readline().split(" ");
-
-  let value = scores[parseInt(minimunScore) - 1],
-    count = 0;
-
-  for (let i = 0; i < numberOfParticipants; i++) {
-    if (parseInt(scores[i]) <= 0) break;
-    if (parseInt(scores[i]) >= value) count++;
+  let numberOfLines = readline();
+  let operation;
+  let result = 0;
+  for (let i = 0; i < numberOfLines; i++) {
+    operation = readline();
+    if (operation.charAt(0) == "+" || operation.charAt(2) == "+") {
+      result++;
+    }
+    if (operation.charAt(0) == "-" || operation.charAt(2) == "-") {
+      result--;
+    }
   }
 
-  console.log(count);
+  console.log(result);
 }

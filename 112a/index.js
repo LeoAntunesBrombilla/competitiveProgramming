@@ -22,19 +22,15 @@ function readline() {
   return inputString[currentLine++];
 }
 
-//TODO rescrever usando filter se pa
-
 function main() {
-  const [numberOfParticipants, minimunScore] = readline().split(" ");
-  const scores = readline().split(" ");
+  const firstWord = readline().toLowerCase();
+  const secondWord = readline().toLowerCase();
 
-  let value = scores[parseInt(minimunScore) - 1],
-    count = 0;
-
-  for (let i = 0; i < numberOfParticipants; i++) {
-    if (parseInt(scores[i]) <= 0) break;
-    if (parseInt(scores[i]) >= value) count++;
+  if (firstWord < secondWord) {
+    console.log(-1);
+  } else if (secondWord < firstWord) {
+    console.log(1);
+  } else {
+    console.log(0);
   }
-
-  console.log(count);
 }
